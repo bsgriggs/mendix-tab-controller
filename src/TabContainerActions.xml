@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.tabcontaineractions.TabContainerActions" pluginWidget="true"
+    needsEntityContext="true" offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Tab Container Actions</name>
+    <description>Add MxActions on click of a tab, so you can show and hide the contents of the tabs onnot being shown</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <property key="watchingTabs" type="object" isList="true">
+                <caption>Watching tabs</caption>
+                <description />
+                <properties>
+                    <propertyGroup caption="watchingTab">
+                        <property key="className" type="expression" required="true">
+                            <caption>Class name</caption>
+                            <description>The CSS class name of the tab you want to watch</description>
+                            <returnType type="String" />
+                        </property>
+                        <property key="onClick" type="action" required="true">
+                            <caption>On click</caption>
+                            <description></description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+            <property key="contentToWatch" type="widgets" required="true">
+                <caption>Content to watch</caption>
+                <description></description>
+            </property>
+            <property key="debugMode" type="boolean" defaultValue="false">
+                <caption>Debug mode</caption>
+                <description>Logs the widgets actions to the browser console</description>
+            </property>
+        </propertyGroup>
+    </properties>
+</widget>
