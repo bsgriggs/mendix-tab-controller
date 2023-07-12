@@ -14,12 +14,12 @@ export function TabContainerActions({
     const [currentTab, setCurrentTab] = useState<number>(0);
     const ref = useRef<HTMLDivElement>(null);
 
-    //update the state if the attribute changes outside the widget
+    // update the state if the attribute changes outside the widget
     useEffect(() => {
         setCurrentTab(Number(updateAttribute.value));
     }, [updateAttribute.value]);
 
-    //click the tab when index changes
+    // click the tab when index changes
     useEffect(() => {
         if (ref.current) {
             const tabList = ref.current.querySelector('[role="tablist"]') as HTMLUListElement; // only consider the first tab list child
@@ -28,7 +28,8 @@ export function TabContainerActions({
             onTabClick?.execute();
             updateAttribute.setValue(Big(currentTab || 0));
         }
-    }, [ref.current, currentTab]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentTab, onTabClick]);
 
     const onClickHandler = useCallback((): void => {
         if (ref.current) {
@@ -38,7 +39,7 @@ export function TabContainerActions({
                 setCurrentTab(Array.prototype.indexOf.call(tabList.querySelectorAll('[role="tab"]'), activeElement));
             }
         }
-    }, [ref.current]);
+    }, []);
 
     return (
         <div
