@@ -9,30 +9,20 @@
     <icon />
     <properties>
         <propertyGroup caption="General">
-            <property key="watchingTabs" type="object" isList="true">
-                <caption>Watching tabs</caption>
-                <description />
-                <properties>
-                    <propertyGroup caption="watchingTab">
-                        <property key="className" type="expression" required="true">
-                            <caption>Class name</caption>
-                            <description>The CSS class name of the tab you want to watch</description>
-                            <returnType type="String" />
-                        </property>
-                        <property key="onClick" type="action" required="true">
-                            <caption>On click</caption>
-                            <description></description>
-                        </property>
-                    </propertyGroup>
-                </properties>
+            <property key="updateAttribute" type="attribute" required="true">
+                <caption>Attribute to update</caption>
+                <description>Set as the index of the current selected tab</description>
+                <attributeTypes>
+                    <attributeType name="Integer" />
+                </attributeTypes>
             </property>
             <property key="contentToWatch" type="widgets" required="true">
                 <caption>Content to watch</caption>
                 <description></description>
             </property>
-            <property key="debugMode" type="boolean" defaultValue="false">
-                <caption>Debug mode</caption>
-                <description>Logs the widgets actions to the browser console</description>
+            <property key="onTabClick" type="action" required="false">
+                <caption>On tab click</caption>
+                <description></description>
             </property>
         </propertyGroup>
     </properties>

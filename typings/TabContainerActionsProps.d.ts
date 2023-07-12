@@ -4,32 +4,23 @@
  * @author Mendix UI Content Team
  */
 import { ComponentType, CSSProperties, ReactNode } from "react";
-import { ActionValue, DynamicValue } from "mendix";
-
-export interface WatchingTabsType {
-    className: DynamicValue<string>;
-    onClick?: ActionValue;
-}
-
-export interface WatchingTabsPreviewType {
-    className: string;
-    onClick: {} | null;
-}
+import { ActionValue, EditableValue } from "mendix";
+import { Big } from "big.js";
 
 export interface TabContainerActionsContainerProps {
     name: string;
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
-    watchingTabs: WatchingTabsType[];
+    updateAttribute: EditableValue<Big>;
     contentToWatch: ReactNode;
-    debugMode: boolean;
+    onTabClick?: ActionValue;
 }
 
 export interface TabContainerActionsPreviewProps {
     class: string;
     style: string;
-    watchingTabs: WatchingTabsPreviewType[];
+    updateAttribute: string;
     contentToWatch: { widgetCount: number; renderer: ComponentType<{ caption?: string }> };
-    debugMode: boolean;
+    onTabClick: {} | null;
 }

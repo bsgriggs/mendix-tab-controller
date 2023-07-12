@@ -5,13 +5,13 @@ export type Platform = "web" | "desktop";
 
 export type Properties = PropertyGroup[];
 
-type PropertyGroup = {
+export type PropertyGroup = {
     caption: string;
     propertyGroups?: PropertyGroup[];
     properties?: Property[];
 };
 
-type Property = {
+export type Property = {
     key: string;
     caption: string;
     description?: string;
@@ -105,11 +105,7 @@ export function getProperties(
     defaultProperties: Properties /* , target: Platform*/
 ): Properties {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
-    /* Example
-    if (values.myProperty === "custom") {
-        delete defaultProperties.properties.myOtherProperty;
-    }
-    */
+
     return defaultProperties;
 }
 
