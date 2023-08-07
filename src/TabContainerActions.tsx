@@ -29,7 +29,7 @@ export function TabContainerActions({
             updateAttribute.setValue(Big(currentTab || 0));
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentTab, onTabClick]);
+    }, [currentTab]);
 
     const onClickHandler = useCallback((): void => {
         if (ref.current) {
