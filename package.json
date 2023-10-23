@@ -1,12 +1,12 @@
 {
-    "name": "tabcontaineractions",
-    "widgetName": "TabContainerActions",
+    "name": "tabcontroller",
+    "widgetName": "TabController",
     "version": "1.0.0",
     "description": "Add MxActions on click of a tab, so you can show and hide the contents of the tabs not being shown",
     "copyright": "Benjamin Griggs",
     "author": "Benjamin Griggs",
     "engines": {
-        "node": ">=14"
+        "node": ">=16"
     },
     "license": "MIT",
     "config": {
@@ -25,7 +25,7 @@
         "release": "pluggable-widgets-tools release:web"
     },
     "devDependencies": {
-        "@mendix/pluggable-widgets-tools": "~9.6.2",
+        "@mendix/pluggable-widgets-tools": "~9.18.0",
         "@types/big.js": "^6.0.2",
         "@types/react": "~17.0.1",
         "@types/react-dom": "~17.0.1"

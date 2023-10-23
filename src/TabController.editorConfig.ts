@@ -1,5 +1,6 @@
 /* eslint-disable */
-import { TabContainerActionsPreviewProps } from "../typings/TabContainerActionsProps";
+import { TabControllerPreviewProps } from "../typings/TabControllerProps";
+import { hidePropertyIn } from "@mendix/pluggable-widgets-tools";
 
 export type Platform = "web" | "desktop";
 
@@ -101,10 +102,14 @@ export type PreviewProps =
     | DatasourceProps;
 
 export function getProperties(
-    _values: TabContainerActionsPreviewProps,
+    _values: TabControllerPreviewProps,
     defaultProperties: Properties /* , target: Platform*/
 ): Properties {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
+
+    if (_values.tabIndexAttribute.trim() === "") {
+        hidePropertyIn(defaultProperties, _values, "onIndexChange");
+    }
 
     return defaultProperties;
 }

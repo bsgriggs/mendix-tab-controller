@@ -1,10 +1,12 @@
-## Tab Container Actions
+## Tab Controller
 
-Add MxActions on click of a tab, so you can show and hide the contents of the tabs not being shown
+Dynamically set the default tab of a standard tab container and/or add MxActions on click of a tab, so you can show and
+hide the contents of the tabs not being displayed.
 
 ## Features
 
-[feature highlights]
+-   Dynamically set the default tab of a standard tab container
+-   Call an MxAction on click of a tab
 
 ## Usage
 
